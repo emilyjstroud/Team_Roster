@@ -1,13 +1,22 @@
-// import React from 'react';
+// import React, { useEffect, useState } from 'react';
 // import { useAuth } from '../utils/context/authContext';
 
 // function TeamPage() {
+// const [team, setTeam] = useState([]);
 
-//   // USE_EFFECT
+// const { user } = useAuth();
+
+// const getWholeTeam = () => {
+
+// };
+
+// useEffect(() => {
+//   getWholeTeam();
+// }, []);
 
 //   return (
 //     // TEAM CARD HERE
 //   );
 // };
 
-// // EXPORT
+// export default TeamPage;
