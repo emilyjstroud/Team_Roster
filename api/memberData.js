@@ -3,7 +3,7 @@
 
 // const dbUrl = clientCredentials.databaseURL;
 
-// GET ALL MEMBER
+// GET ALL MEMBERS
 
 // CREATE MEMBER
 

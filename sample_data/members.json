@@ -1,0 +1,30 @@
+{
+  "-LHB1": {
+    "name" : "Emily",
+    "role" : "Stylist",
+    "image" : "",
+    "firebaseKey" : "-LHB1",
+    "uid" : ""
+  },
+  "-LHB2": {
+    "name" : "Emily",
+    "role" : "Stylist",
+    "image" : "",
+    "firebaseKey" : "-LHB2",
+    "uid" : ""
+  },
+  "-LHB3": {
+    "name" : "Emily",
+    "role" : "Stylist",
+    "image" : "",
+    "firebaseKey" : "-LHB3",
+    "uid" : ""
+  },
+  "-LHB4": {
+    "name" : "Emily",
+    "role" : "Stylist",
+    "image" : "",
+    "firebaseKey" : "-LHB4",
+    "uid" : ""
+  }
+}
