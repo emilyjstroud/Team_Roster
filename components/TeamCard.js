@@ -3,11 +3,12 @@ import { PropTypes } from 'prop-types';
 import { Button } from 'react-bootstrap/Button';
 import { Card } from 'react-bootstrap/Card';
 import Link from 'next/link';
+import { deleteTeamMembers } from '../api/mergedData';
 
 function TeamCard({ teamObj, onUpdate }) {
   const deleteThisTeam = () => {
     if (window.confirm(`Delete ${teamObj.name}?`)) {
-      deleteThisTeam(teamObj.firebaseKey).then(() => onUpdate());
+      deleteTeamMembers(teamObj.firebaseKey).then(() => onUpdate());
     }
   };
 
