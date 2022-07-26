@@ -1,9 +1,24 @@
+// import { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
+  // Setting State for Members
+  // const [members, setMembers] = useState([]);
+
+  // Gets UID
   const { user } = useAuth();
+
+  // API Call for getting All Members
+  // const getAllMembers = () => {
+  //   getMembers(user.uid).then(setMembers);
+  // };
+
+  // API Call to get All Members on component render
+  // useEffect(() => {
+  //   getAllMembers();
+  // }, [user]);
 
   return (
     <div
