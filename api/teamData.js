@@ -19,15 +19,26 @@ const getTeam = (uid) => new Promise((resolve, reject) => {
 // CREATE TEAM
 const createTeam = () => {};
 
+// GET SINGLE TEAM
+const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/team/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 // DELETE TEAM
-const deleteTeam = () => {};
+const deleteSingleTeam = () => {};
 
 // UPDATE TEAM
 const updateTeam = () => {};
+
+const getTeamMembers = () => {};
 
 export {
   getTeam,
   createTeam,
   updateTeam,
-  deleteTeam,
+  deleteSingleTeam,
+  getTeamMembers,
+  getSingleTeam,
 };

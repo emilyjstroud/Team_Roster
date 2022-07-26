@@ -1,7 +1,8 @@
-// import { useEffect } from 'react';
+// import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
+// import { getMembers } from '../api/memberData';
 
 function Home() {
   // Setting State for Members
