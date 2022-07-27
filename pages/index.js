@@ -42,7 +42,6 @@ function Home() {
         <Button>View Team</Button>
       </Link>
       <div className="d-flex flex-wrap">
-        {/* TODO: map over books here using BookCard component */}
         {
         members.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
         }
