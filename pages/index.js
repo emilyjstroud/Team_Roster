@@ -1,9 +1,27 @@
+import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import Link from 'next/link';
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
+import { getMembers } from '../api/memberData';
+import MemberCard from '../components/MemberCard';
 
 function Home() {
+  // Setting State for Members
+  const [members, setMembers] = useState([]);
+
+  // Gets UID
   const { user } = useAuth();
+
+  // API Call for getting All Members
+  const getAllMembers = () => {
+    getMembers(user.uid).then(setMembers);
+  };
+
+  // API Call to get All Members on component render
+  useEffect(() => {
+    getAllMembers();
+  }, [user]);
 
   return (
     <div
@@ -20,6 +38,15 @@ function Home() {
       <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
         Sign Out
       </Button>
+      <Link href="/team" passHref>
+        <Button>View Team</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {/* TODO: map over books here using BookCard component */}
+        {
+        members.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
+        }
+      </div>
     </div>
   );
 }
