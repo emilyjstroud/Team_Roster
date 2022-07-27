@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { Form } from 'react-bootstrap/Form';
-import { FloatingLabel } from 'react-bootstrap/FloatingLabel';
-import { Button } from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import { createMember, updateMember } from '../../api/memberData';
 import { useAuth } from '../../utils/context/authContext';
