@@ -42,7 +42,7 @@ function MemberForm({ obj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMember(payload).then(() => {
-        router.push('/');
+        router.push('/team');
       });
     }
   };
@@ -59,47 +59,6 @@ function MemberForm({ obj }) {
       <FloatingLabel controlId="floatingInput3" label="Member Role" className="mb-3">
         <Form.Control type="text" placeholder="Role" name="role" value={formInput.role} onChange={handleChange} required />
       </FloatingLabel>
-
-      {/* <FloatingLabel controlId="floatingSelect" label="Team">
-        <Form.Select
-          aria-label="Team"
-          name="teams"
-          onChange={handleChange}
-          className="mb-3"
-          required
-        > */}
-      {/* <option value="">Select a Team</option>
-          {
-          teams.map((team) => (
-            <option
-              key={team.firebaseKey}
-              value={team.firebaseKey}
-              selected={obj.name === team.firebaseKey}
-            >
-              {team.name}
-            </option> */}
-      {/* ))
-          } */}
-      {/* </Form.Select> */}
-      {/* </FloatingLabel> */}
-
-      {/* // <FloatingLabel controlId="floatingTextarea" label="Description" className="mb-3">
-        //   <Form.Control as="textarea" placeholder="Description" style={{ height: '100px' }} name="description" value={formInput.description} onChange={handleChange} required />
-        // </FloatingLabel> */}
-
-      {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC
-      <Form.Check
-        className="text-white mb-3"
-        type="switch"
-        id="sale"
-        name="sale"
-        label="On Sale?"
-        checked={formInput.sale}
-        onChange={(e) => setFormInput((prevState) => ({
-          ...prevState,
-          sale: e.target.checked,
-        }))}
-      /> */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Member</Button>
     </Form>
   );

@@ -17,9 +17,9 @@ export default function ViewMember() {
 
   return (
     <div className="mt-5 d-flex flex-wrap">
-      // eslint-disable-next-line react/jsx-no-comment-textnodes
+      {/* // eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <div className="d-flex flex-column">
-        // eslint-disable-next-line @next/next/no-img-element
+        {/* // eslint-disable-next-line @next/next/no-img-element */}
         <img src={memberDetails.image} alt={memberDetails.name} style={{ width: '300px' }} />
       </div>
       <div className="text-white ms-5 details">

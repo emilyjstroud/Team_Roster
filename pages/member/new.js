@@ -2,6 +2,7 @@ import React from 'react';
 import MemberForm from '../../components/forms/MemberForm';
 
 // // CREATE A REUSABLE FORM TO ADD/EDIT MEMBER AND RENDER IN THIS VIEW
+  <title>Team Roster</title>;
 
 export default function addMember() {
   <div>

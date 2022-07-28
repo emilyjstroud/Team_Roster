@@ -16,8 +16,8 @@ function MemberCard({ memberObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={memberObj.image} alt={memberObj.name} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{memberObj.name}</Card.Title>
-        <p>{memberObj.role}</p>
+        <Card.Title>Name: {memberObj.name}</Card.Title>
+        <p>Role: {memberObj.role}</p>
         <Link href={`/member/${memberObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
