@@ -1,27 +1,27 @@
-import { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
-import { getMembers } from '../api/memberData';
-import MemberCard from '../components/MemberCard';
+// import { getMembers } from '../api/memberData';
+// import MemberCard from '../components/MemberCard';
 
 function Home() {
   // Setting State for Members
-  const [members, setMembers] = useState([]);
+  // const [members, setMembers] = useState([]);
 
   // Gets UID
   const { user } = useAuth();
 
   // API Call for getting All Members
-  const getAllMembers = () => {
-    getMembers(user.uid).then(setMembers);
-  };
+  // const getAllMembers = () => {
+  //   getMembers(user.uid).then(setMembers);
+  // };
 
   // API Call to get All Members on component render
-  useEffect(() => {
-    getAllMembers();
-  }, [user]);
+  // useEffect(() => {
+  //   getAllMembers();
+  // }, [user]);
 
   return (
     <div
@@ -33,6 +33,7 @@ function Home() {
         margin: '0 auto',
       }}
     >
+      <title>Team Roster</title>
       <h1>Hello {user.displayName}! </h1>
       <p>Click the button below to logout!</p>
       <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
@@ -41,11 +42,10 @@ function Home() {
       <Link href="/team" passHref>
         <Button>View Team</Button>
       </Link>
-      <div className="d-flex flex-wrap">
-        {/* TODO: map over books here using BookCard component */}
-        {
+      <div className="d-flex flex-wrap flex-row">
+        {/* {
         members.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
-        }
+        } */}
       </div>
     </div>
   );
