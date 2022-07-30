@@ -16,7 +16,10 @@ function TeamPage() {
   const { user } = useAuth();
 
   const getAllMembers = () => {
-    getMembers(user.uid).then(setMembers);
+    getMembers(user.uid).then((memberArray) => {
+      setMembers(memberArray);
+      setFilteredMembers(memberArray);
+    });
   };
 
   useEffect(() => {
@@ -25,12 +28,12 @@ function TeamPage() {
 
   return (
     <div className="d-flex flex-wrap">
-      <SearchBar members={members} setFilteredMembers={setFilteredMembers} />
       <title>Team Roster</title>
       <h1>Meet the Members</h1>
+      <SearchBar filteredMembers={members} setFilteredMembers={setFilteredMembers} />
       <div className="d-flex flex-wrap flex-row">
         {
-        filteredMembers.members.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
+        filteredMembers.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
         }
       </div>
     </div>

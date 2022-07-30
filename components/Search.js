@@ -14,7 +14,9 @@ function SearchBar({ filteredMembers, setFilteredMembers }) {
     setFilteredMembers(results);
   };
 
-  const resetInput = () => {
+  console.warn(filteredMembers);
+
+  const resetSearch = () => {
     setSearchInput('');
     setFilteredMembers(filteredMembers);
   };
@@ -29,7 +31,7 @@ function SearchBar({ filteredMembers, setFilteredMembers }) {
           onChange={handleChange}
           aria-describedby="basic-addon2"
         />
-        <Button variant="danger" onClick={resetInput}>
+        <Button variant="danger" onClick={resetSearch}>
           Reset Search
         </Button>
       </InputGroup>

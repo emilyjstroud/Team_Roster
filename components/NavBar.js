@@ -5,7 +5,6 @@ import {
   Navbar, Container, Nav, Button,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
-import SearchBar from './Search';
 // import members from '../sample_data/members.json';
 
 export default function NavBar() {
@@ -64,7 +63,6 @@ export default function NavBar() {
       );
         })}
     </form> */}
-      <SearchBar />
     </Navbar>
   );
 }
