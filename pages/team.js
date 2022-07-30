@@ -7,6 +7,7 @@ import { getMembers } from '../api/memberData';
 import { useAuth } from '../utils/context/authContext';
 // import TeamCard from '../components/TeamCard';
 import MemberCard from '../components/MemberCard';
+// import MemberForm from '../components/forms/MemberForm';
 
 function TeamPage() {
   const [members, setMembers] = useState([]);
@@ -24,7 +25,7 @@ function TeamPage() {
   return (
     <div className="d-flex flex-wrap">
       <title>Team Roster</title>
-      <h1>Team $hit</h1>
+      <h1>Meet the Members</h1>
       <div className="d-flex flex-wrap flex-row">
         {
         members.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
