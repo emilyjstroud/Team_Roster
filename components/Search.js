@@ -4,19 +4,19 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-function SearchBar({ members, setFilteredMembers }) {
+function SearchBar({ filteredMembers, setFilteredMembers }) {
   const [searchInput, setSearchInput] = useState('');
 
   const handleChange = (e) => {
     const { value } = e.target;
     setSearchInput(value);
-    const results = members.filter((member) => member.name.toLowerCase().includes(value.toLowerCase()));
+    const results = filteredMembers.filter((member) => member.name.toLowerCase().includes(value.toLowerCase()));
     setFilteredMembers(results);
   };
 
   const resetInput = () => {
     setSearchInput('');
-    setFilteredMembers(members);
+    setFilteredMembers(filteredMembers);
   };
 
   return (
@@ -29,7 +29,7 @@ function SearchBar({ members, setFilteredMembers }) {
           onChange={handleChange}
           aria-describedby="basic-addon2"
         />
-        <Button variant="secondary" onClick={resetInput}>
+        <Button variant="danger" onClick={resetInput}>
           Reset Search
         </Button>
       </InputGroup>
@@ -38,7 +38,7 @@ function SearchBar({ members, setFilteredMembers }) {
 }
 
 SearchBar.propTypes = {
-  members: PropTypes.arrayOf(PropTypes.shape({
+  filteredMembers: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
   })).isRequired,
   setFilteredMembers: PropTypes.func.isRequired,
