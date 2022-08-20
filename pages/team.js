@@ -7,14 +7,19 @@ import { getMembers } from '../api/memberData';
 import { useAuth } from '../utils/context/authContext';
 // import TeamCard from '../components/TeamCard';
 import MemberCard from '../components/MemberCard';
+import SearchBar from '../components/Search';
+// import MemberForm from '../components/forms/MemberForm';
 
 function TeamPage() {
   const [members, setMembers] = useState([]);
-
+  const [filteredMembers, setFilteredMembers] = useState([]);
   const { user } = useAuth();
 
   const getAllMembers = () => {
-    getMembers(user.uid).then(setMembers);
+    getMembers(user.uid).then((memberArray) => {
+      setMembers(memberArray);
+      setFilteredMembers(memberArray);
+    });
   };
 
   useEffect(() => {
@@ -24,10 +29,11 @@ function TeamPage() {
   return (
     <div className="d-flex flex-wrap">
       <title>Team Roster</title>
-      <h1>Team $hit</h1>
+      <h1>Meet the Members</h1>
+      <SearchBar filteredMembers={members} setFilteredMembers={setFilteredMembers} />
       <div className="d-flex flex-wrap flex-row">
         {
-        members.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
+        filteredMembers.map((member) => <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllMembers} />)
         }
       </div>
     </div>
