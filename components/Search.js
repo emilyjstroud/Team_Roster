@@ -14,8 +14,6 @@ function SearchBar({ filteredMembers, setFilteredMembers }) {
     setFilteredMembers(results);
   };
 
-  console.warn(filteredMembers);
-
   const resetSearch = () => {
     setSearchInput('');
     setFilteredMembers(filteredMembers);
